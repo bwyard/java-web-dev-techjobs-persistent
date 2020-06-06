@@ -2,17 +2,19 @@ package org.launchcode.javawebdevtechjobspersistent.models;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
-
+@MappedSuperclass
 public abstract class AbstractEntity {
 
     @Id
     @GeneratedValue
     private int id;
     @NotBlank
+
     @Size(max = 30, message = "Max name is 30 Characters")
     private String name;
 
